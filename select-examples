@@ -1,0 +1,39 @@
+select * from Customers as c
+left  outer join
+Orders as o
+on c.Customer = o.Customer
+
+
+select Country, count(*) as NumbersOfCustomers
+from Customers
+--where Country is not null
+group by Country
+having Count(*) > 1;
+
+
+select *
+from orders
+where OrderDate between '20190101' and '20190115'
+
+select * 
+From customers
+where country between 'A' and 'Z'
+
+select *
+from Items
+where Item in('Turntable','Amplifier')
+
+select *
+from items
+where Item like '%n%'
+
+select top (3) Item, Sum(Quantity) as NumberOfItemsSold
+From OrderItems
+Group by Item
+order by NumberOfItemsSold Desc
+
+select Item, Sum(Quantity) as NumberOfItemsSold
+From OrderItems
+Group by Item
+order by NumberOfItemsSold Desc
+OFFSET 3 Rows Fetch next 3 rows Only;
