@@ -37,3 +37,7 @@ From OrderItems
 Group by Item
 order by NumberOfItemsSold Desc
 OFFSET 3 Rows Fetch next 3 rows Only;
+
+
+use NewDB;
+select cast(123 as decimal(5,2));
